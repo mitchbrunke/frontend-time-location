@@ -2,7 +2,7 @@ const timezone = document.querySelector("#timezone");
 const time = document.getElementById("actualTime");
 
 export async function locTime() {
-  const response = await fetch("https://worldtimeapi.org/api/ip/");
+  const response = await fetch("http://worldtimeapi.org/api/ip/");
   const locationTime = await response.json();
   timezone.innerText = locationTime.abbreviation;
 
