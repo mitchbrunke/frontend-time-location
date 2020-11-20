@@ -1063,7 +1063,7 @@ function _locTime() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch("http://worldtimeapi.org/api/ip/");
+            return fetch("https://worldtimeapi.org/api/ip/");
 
           case 2:
             response = _context.sent;
@@ -1111,7 +1111,7 @@ var _time = require("/time.js");
 (0, _time.locTime)(); //Finds location based on users IP address
 
 (0, _location.place)();
-},{"./styles.scss":"styles.scss","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","/quote.js":"quote.js","/location.js":"location.js","/time.js":"time.js"}],"C:/Users/mbrunke/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./styles.scss":"styles.scss","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","/quote.js":"quote.js","/location.js":"location.js","/time.js":"time.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1139,7 +1139,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58338" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -1315,5 +1315,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/mbrunke/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.e31bb0bc.js.map
