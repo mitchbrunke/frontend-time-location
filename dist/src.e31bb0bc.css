@@ -1,3 +1,8 @@
+/**
+*
+* Testing
+*
+**/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 html,
 body,
@@ -187,6 +192,16 @@ h1 {
   font-size: 12.5rem;
   line-height: 100%;
 }
+@media (max-width: 900px) {
+  h1 {
+    font-size: 9.5rem;
+  }
+}
+@media (max-width: 550px) {
+  h1 {
+    font-size: 7.5rem;
+  }
+}
 
 h2 {
   font-family: Inter;
@@ -235,6 +250,11 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (min-width: 768px) and (max-width: 900px) {
+  .container {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/bg-image-daytime.c4ca1462.jpg") no-repeat cover;
+  }
+}
 
 .quote-container {
   width: 575px;
@@ -243,6 +263,12 @@ h6 {
 }
 .quote-container #author {
   padding-top: 13px;
+}
+@media (max-width: 900px) {
+  .quote-container {
+    width: 75%;
+    margin-left: 75px;
+  }
 }
 
 .time-container {
@@ -253,7 +279,7 @@ h6 {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1.1rem;
   line-height: 28px;
   /* identical to box height, or 140% */
   display: flex;
@@ -273,8 +299,9 @@ h6 {
   font-family: Inter;
   font-style: normal;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 2rem;
   line-height: 28px;
+  padding-bottom: 1rem;
 }
 .time-container #location {
   font-family: Inter;
@@ -287,6 +314,18 @@ h6 {
   align-items: flex-end;
   letter-spacing: 4.8px;
   text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .time-container {
+    margin-left: 75px;
+    max-width: 75%;
+  }
+}
+@media (max-width: 600px) {
+  .time-container {
+    margin-left: 50px;
+    max-width: 95%;
+  }
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */
