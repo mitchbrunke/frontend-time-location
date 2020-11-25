@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import "./styles.scss";
 import "regenerator-runtime/runtime";
 import { randomQuote } from "/quote.js";
