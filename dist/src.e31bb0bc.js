@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./images\\content\\bg-image-daytime.jpg":[["bg-image-daytime.1a1b9dc5.jpg","images/content/bg-image-daytime.jpg"],"images/content/bg-image-daytime.jpg"],"./images\\content\\tablet\\bg-image-daytime.jpg":[["bg-image-daytime.c4ca1462.jpg","images/content/tablet/bg-image-daytime.jpg"],"images/content/tablet/bg-image-daytime.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
+},{"./images\\content\\bg-image-daytime.jpg":[["bg-image-daytime.1a1b9dc5.jpg","images/content/bg-image-daytime.jpg"],"images/content/bg-image-daytime.jpg"],"./images\\content\\tablet\\bg-image-daytime.jpg":[["bg-image-daytime.c4ca1462.jpg","images/content/tablet/bg-image-daytime.jpg"],"images/content/tablet/bg-image-daytime.jpg"],"./images\\content\\bg-image-nighttime.jpg":[["bg-image-nighttime.ebdc84e1.jpg","images/content/bg-image-nighttime.jpg"],"images/content/bg-image-nighttime.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
 var define;
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1049,8 +1049,11 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+/* eslint-disable prettier/prettier */
+// eslint-disable-next-line prettier/prettier
 var timezone = document.querySelector("#timezone");
 var time = document.getElementById("actualTime");
+var container = document.getElementsByClassName("container")[0];
 
 function locTime() {
   return _locTime.apply(this, arguments);
@@ -1058,7 +1061,7 @@ function locTime() {
 
 function _locTime() {
   _locTime = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var response, locationTime, hrTime, uiTime;
+    var response, locationTime, hrTime, uiTime, isNightCheck, isDay;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -1078,10 +1081,28 @@ function _locTime() {
             console.log("this is 24hr time ".concat(hrTime));
             console.log(hrTime.slice(0, 5)); //const uiTime = updatedTime.split("PM").pop();
 
-            uiTime = hrTime.slice(0, 5);
-            time.innerText = uiTime;
+            uiTime = hrTime.slice(0, 5); //check if it is night time or day time to update the UI background
 
-          case 12:
+            isNightCheck = uiTime[1];
+            console.log(isNightCheck);
+
+            isDay = function isDay(isNightCheck) {
+              if (isNightCheck > 8) {
+                console.log("It's night time");
+                container.classList.add("night");
+              } else {
+                console.log("It's day time");
+                container.classList.add("day");
+              }
+            }; //update UI
+            //update time
+
+
+            time.innerText = uiTime; //update background
+
+            isDay();
+
+          case 16:
           case "end":
             return _context.stop();
         }
@@ -1141,7 +1162,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55634" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57580" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
